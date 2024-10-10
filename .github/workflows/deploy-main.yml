@@ -19,7 +19,11 @@ jobs:
         env:
           TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
         run: |
-          git add .
-          git commit -m "Automated sync from main repository" || echo "No changes to commit"
-          git remote add secondary https://$TOKEN@github.com/Rodcarm/gitAccionTest.git
-          git push -u secondary test
+          echo "branch"
+          git branch
+          echi "branch -r"
+          git branch -r
+          git checkout test
+          git merge new-main
+          git commit -am "cambios en test"
+          git push
